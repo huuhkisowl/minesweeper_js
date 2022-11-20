@@ -1,0 +1,23 @@
+{
+  "name": "minesweeper_js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huuhkisowl/minesweeper_js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huuhkisowl/minesweeper_js/issues"
+  },
+  "homepage": "https://github.com/huuhkisowl/minesweeper_js#readme",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
