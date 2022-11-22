@@ -7,57 +7,53 @@ const minesweeper = (square) => {
         return result
     }
     //console.table(square)
-    for(let x = 0; x < square.length; x++) {
+    square.map((x, xIndex) => {
         result.push([]);
-        for(let y = 0; y < square[x].length; y++) {
-            if(square[x][y] === '*') {
-                result[x][y] = '*';
+        x.map((y, yIndex) => {
+            if(y === '*') {
+                result[xIndex][yIndex] = '*';
             }
             else {
-                result[x][y] = 0;
+                result[xIndex][yIndex] = 0;
                 //Above
-                if(square[x-1] !== undefined) {
-                    if(square[x-1][y] === '*') {
-                        result[x][y]++
+                if(square[xIndex-1] !== undefined) {
+                    if(square[xIndex-1][yIndex] === '*') {
+                        result[xIndex][yIndex]++
                     }
                     //Top Left
-                    if(square[x-1][y-1] === '*') {
-                        result[x][y]++
+                    if(square[xIndex-1][yIndex-1] === '*') {
+                        result[xIndex][yIndex]++
                     }
                     //Top Right
-                    if(square[x-1][y+1] === '*') {
-                        result[x][y]++
+                    if(square[xIndex-1][yIndex+1] === '*') {
+                        result[xIndex][yIndex]++
                     }
                 }
                 //Below
-                if(square[x+1] !== undefined) {
-                    if(square[x+1][y] === '*') {
-                        result[x][y]++
+                if(square[xIndex+1] !== undefined) {
+                    if(square[xIndex+1][yIndex] === '*') {
+                        result[xIndex][yIndex]++
                     }
                     //Bottom Left
-                    if(square[x+1][y-1] === '*') {
-                        result[x][y]++
+                    if(square[xIndex+1][yIndex-1] === '*') {
+                        result[xIndex][yIndex]++
                     }
                     //Bottom Right
-                    if(square[x+1][y+1] === '*') {
-                        result[x][y]++
+                    if(square[xIndex+1][yIndex+1] === '*') {
+                        result[xIndex][yIndex]++
                     }
                 }
                 //left
-                if(square[x][y-1] !== undefined) {
-                    if(square[x][y-1] === '*') {
-                        result[x][y]++
-                    }
+                if(square[xIndex][yIndex-1] === '*')  {
+                    result[xIndex][yIndex]++
                 }
                 //Right
-                if(square[x][y+1] !== undefined) {
-                    if(square[x][y+1] === '*') {
-                        result[x][y]++
-                    }
+                if(square[xIndex][yIndex+1] === '*') {
+                    result[xIndex][yIndex]++
                 }
             }
-        }
-    }
+        })
+    });
 
     //console.table(result)
     return result
