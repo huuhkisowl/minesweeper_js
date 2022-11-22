@@ -44,11 +44,11 @@ const minesweeper = (square) => {
                     }
                 }
                 //left
-                if(square[xIndex][yIndex-1] === '*')  {
+                if(x[yIndex-1] === '*')  {
                     result[xIndex][yIndex]++
                 }
                 //Right
-                if(square[xIndex][yIndex+1] === '*') {
+                if(x[yIndex+1] === '*') {
                     result[xIndex][yIndex]++
                 }
             }
